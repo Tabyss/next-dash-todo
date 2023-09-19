@@ -1,7 +1,12 @@
+'use client'
+
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { usePathname } from 'next/navigation'
 import Image from "next/image";
 
 function Header() {
+  const pathname = usePathname().substring(1)
+
   return (
     <Flex gap="30px" h="60px">
       <Flex p="2">
@@ -23,8 +28,8 @@ function Header() {
         bg="#fff"
       >
         <Flex>
-          <Text fontSize="xl" color="brand.900" as="b">
-            Dashboard
+          <Text fontSize="xl" color="brand.900" as="b" textTransform="capitalize">
+            {pathname}
           </Text>
         </Flex>
         <Flex gap="10px">
